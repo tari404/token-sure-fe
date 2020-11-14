@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <div class="logo"><img src="@/assets/logo_text.png" height="50px" alt="logo" /></div>
+      <div class="logo"><img src="@/assets/logo.png" height="50px" alt="logo" />TokenSure</div>
       <div class="wallet">
         <i class="ri-wallet-line"></i>
         <span v-if="account">{{ account }}</span>
@@ -111,6 +111,10 @@ export default {
     font-size 20px
     display flex
     align-items center
+    color #244384
+    img
+      margin-right 6px
+      font-weight 500
   .wallet
     display flex
     align-items center
