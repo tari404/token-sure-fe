@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <div class="logo">TokenSure</div>
+      <div class="logo"><img src="@/assets/logo_text.png" height="50px" alt="logo" /></div>
       <div class="wallet">
         <i class="ri-wallet-line"></i>
         <span v-if="account">{{ account }}</span>
@@ -109,6 +109,8 @@ export default {
     background-image linear-gradient(-225deg, #22E1FF 0%, #1D8FE1 48%, #625EB1 100%)
   .logo
     font-size 20px
+    display flex
+    align-items center
   .wallet
     display flex
     align-items center

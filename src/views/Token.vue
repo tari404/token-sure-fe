@@ -333,7 +333,7 @@ export default {
     box-shadow 0 2px 6px rgba(116, 167, 0, .4)
   .button
     margin-top 10px
-    height 40px
+    height 50px
     border-radius 3px
     display flex
     align-items center
@@ -356,7 +356,7 @@ export default {
   flex-direction column
   a
     margin-bottom 20px
-    height 40px
+    height 50px
     border-radius 3px
     color #fff
     display flex
