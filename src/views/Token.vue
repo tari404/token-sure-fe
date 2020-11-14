@@ -47,11 +47,13 @@
             <div class="form" :class="{ 'in-form-focus': focus === 'in' }">
               <el-form ref="inForm" :model="inForm" label-width="100px">
                 <el-form-item label="承保代币数量">
-                  <el-input v-model="inForm.amount" type="number"></el-input>
+                  <el-input v-model="inForm.amount" type="number">
+                    <span class="suffix" slot="suffix">USDC</span>
+                  </el-input>
                 </el-form-item>
                 <el-form-item label="最小APY获利">
                   <el-input v-model="inForm.apy" type="number">
-                    <span slot="suffix">%</span>
+                    <span class="suffix" slot="suffix">%</span>
                   </el-input>
                 </el-form-item>
               </el-form>
@@ -69,11 +71,13 @@
             <div class="form" :class="{ 'out-form-focus': focus === 'out' }">
               <el-form ref="outForm" :model="outForm" label-width="100px">
                 <el-form-item label="待保代币数量">
-                  <el-input v-model="outForm.amount" type="number"></el-input>
+                  <el-input v-model="outForm.amount" type="number">
+                    <span class="suffix" slot="suffix">USDC</span>
+                  </el-input>
                 </el-form-item>
                 <el-form-item label="最大APY让利">
                   <el-input v-model="outForm.apy" type="number">
-                    <span slot="suffix">%</span>
+                    <span class="suffix" slot="suffix">%</span>
                   </el-input>
                 </el-form-item>
               </el-form>
@@ -381,6 +385,14 @@ export default {
   color #606266
   i
     margin-right 4px
+
+.el-input >>> input
+  padding-right 54px
+  text-align right
+.suffix
+  width 44px
+  text-align center
+  display inline-block
 
 .sub-container
   flex 1 1 auto

@@ -113,7 +113,7 @@ export default new Vuex.Store({
         const token = tokenList.find(item => item.name === name)
         return token ? token.address : ''
       }
-    },
+    }
   },
   actions: {},
   modules: {}
