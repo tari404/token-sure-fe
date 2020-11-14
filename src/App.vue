@@ -1,19 +1,47 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <div class="logo">TokenSure</div>
+      <div class="wallet">
+        <i class="ri-wallet-line"></i>
+        <span v-if="contract">{{ contract }}</span>
+        <span v-else>未连接钱包</span>
+      </div>
     </div>
     <router-view />
   </div>
 </template>
 
+<script>
+import { mapState } from 'vuex'
+
+export default {
+  name: 'App',
+  computed: {
+    ...mapState({
+      contract: state => state.contract
+    })
+  }
+}
+</script>
+
 <style lang="stylus">
-#app
-  font-family Avenir, Helvetica, Arial, sans-serif
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  text-align center
-  color #2c3e50
-  margin-top 60px
+@import '~@/assets/reset.styl'
+
+#nav
+  padding 0 30px
+  height 80px
+  background-color #fff
+  border-bottom solid 1px #dfdfdf
+  display flex
+  justify-content space-between
+  align-items center
+  color #666
+  .logo
+    font-size 20px
+  .wallet
+    display flex
+    align-items center
+    i
+      margin-right 4px
 </style>
