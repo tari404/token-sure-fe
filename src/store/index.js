@@ -6,19 +6,19 @@ Vue.use(Vuex)
 const testData = {
   yfii: [
     {
-      address: '0x19d994471D61d36FE367928Cc58102a376089D1f',
+      address: '0xd76bb6fdd24aA5f85ef614Ab3008190cB279953F',
       name: 'eth-dai'
     },
     {
-      address: '0x68A23248000d5d4C943EE685989998c1B19bD74E',
+      address: '0xd76bb6fdd24aA5f85ef614Ab3008190cB279953F',
       name: 'eth-usdc'
     },
     {
-      address: '0x7E43210a4c6831D421f57026617Fdfc8ED3A0baf',
+      address: '0xd76bb6fdd24aA5f85ef614Ab3008190cB279953F',
       name: 'eth-usdt'
     },
     {
-      address: '0xb918368082655fA223c162266ecd88Aa7Ae40bc9',
+      address: '0xd76bb6fdd24aA5f85ef614Ab3008190cB279953F',
       name: 'eth-wbtc'
     }
   ],
@@ -31,56 +31,56 @@ const testData = {
   bal: []
 }
 
-const testRecords = [
-  {
-    token: 'ETH-USDT',
-    amount: 12000,
-    apy: 9.32,
-    dir: 'in',
-    finished: false
-  },
-  {
-    token: 'ETH-USDT',
-    amount: 23100,
-    apy: 2.32,
-    dir: 'out',
-    finished: true
-  },
-  {
-    token: 'ETH-WBTC',
-    amount: 120,
-    apy: 2.32,
-    dir: 'in',
-    finished: true
-  }
-]
+// const testRecords = [
+//   {
+//     token: 'ETH-USDT',
+//     amount: 12000,
+//     apy: 9.32,
+//     dir: 'in',
+//     finished: false
+//   },
+//   {
+//     token: 'ETH-USDT',
+//     amount: 23100,
+//     apy: 2.32,
+//     dir: 'out',
+//     finished: true
+//   },
+//   {
+//     token: 'ETH-WBTC',
+//     amount: 120,
+//     apy: 2.32,
+//     dir: 'in',
+//     finished: true
+//   }
+// ]
 
-const testList = [
-  {
-    token: 'ETH-USDT',
-    amount: 12000,
-    apy: 9.32,
-    dir: 'in'
-  },
-  {
-    token: 'ETH-WBTC',
-    amount: 120,
-    apy: 2.32,
-    dir: 'in'
-  },
-  {
-    token: 'ETH-USDT',
-    amount: 12000,
-    apy: 9.32,
-    dir: 'in'
-  },
-  {
-    token: 'ETH-USDT',
-    amount: 23100,
-    apy: 2.32,
-    dir: 'out'
-  }
-]
+// const testList = [
+//   {
+//     token: 'ETH-USDT',
+//     amount: 12000,
+//     apy: 9.32,
+//     dir: 'in'
+//   },
+//   {
+//     token: 'ETH-WBTC',
+//     amount: 120,
+//     apy: 2.32,
+//     dir: 'in'
+//   },
+//   {
+//     token: 'ETH-USDT',
+//     amount: 12000,
+//     apy: 9.32,
+//     dir: 'in'
+//   },
+//   {
+//     token: 'ETH-USDT',
+//     amount: 23100,
+//     apy: 2.32,
+//     dir: 'out'
+//   }
+// ]
 
 export default new Vuex.Store({
   state: {
@@ -89,17 +89,21 @@ export default new Vuex.Store({
     apy: new Map(),
     protocol: testData,
 
-    records: testRecords,
-    list: testList
+    records: [],
+    list: []
   },
   mutations: {
     SET_CHAIN_ID(state, id) {
       state.chainId = id
     },
     SET_ACCOUNT(state, account) {
-      // state.account = account
-      console.log(account)
-      state.account = '0x000000004fa9e635dBe91C83aEe357d01494936D'
+      state.account = account
+      // console.log(account)
+      // state.account = '0xE00f86BC7377cfEaFA6F369BcCeb4a2cc151849c'
+    },
+    SET_MINE_INFO(state, { records, list }) {
+      state.records = records
+      state.list = list
     }
   },
   getters: {

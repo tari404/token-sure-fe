@@ -1,6 +1,9 @@
 <template>
   <div class="records">
     <ul>
+      <li v-if="list.length === 0" class="record-item">
+        挂单列表为空
+      </li>
       <li v-for="(item, i) in list" :key="i" :class="`record-item record-item-${item.dir}`">
         <p>{{ item.dir === 'in' ? '承接保单' : '发布保单' }}</p>
         <span class="token">{{ item.amount }} {{ item.token }}</span>
