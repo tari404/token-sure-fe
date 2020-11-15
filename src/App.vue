@@ -38,9 +38,9 @@ export default {
       apy: state => state.apy
     })
   },
-  created() {
+  async created() {
     if (typeof window.ethereum !== 'undefined') {
-      window.ethereum
+      await window.ethereum
         .request({ method: 'eth_requestAccounts' })
         .then(this.updateAccount)
         .catch(() => {

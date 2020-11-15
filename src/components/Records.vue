@@ -1,6 +1,9 @@
 <template>
   <div class="records">
     <ul>
+      <li v-if="records.length === 0" class="record-item">
+        成交记录为空
+      </li>
       <li
         v-for="(item, i) in records"
         :key="i"
